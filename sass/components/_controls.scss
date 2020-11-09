@@ -1,0 +1,66 @@
+.controls {
+  // border: 1px solid;
+  @include flexCenter;
+  justify-content: space-between;
+  width: 100%;
+
+  &__time,
+  &__score {
+    width: 15rem;
+    letter-spacing: 2px;
+  }
+
+  &__time {
+    order: 0;
+  }
+
+  &__score {
+    order: 2;
+  }
+
+  .btn-start {
+    order: 1;
+    cursor: pointer;
+    width: 20rem;
+    font-family: inherit;
+    font-size: 3rem;
+    outline: none;
+    background-color: $color-white;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 0.5rem;
+    position: relative;
+    // overflow: hidden;
+
+    &::before {
+      content: 'START';
+      color: $color-white;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $color-black;
+      opacity: 1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease, opacity 0.4s ease;
+    }
+
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &:disabled {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+
+  .time,
+  .score {
+    font-size: 3.5rem;
+  }
+}

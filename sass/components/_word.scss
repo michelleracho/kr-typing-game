@@ -1,0 +1,29 @@
+.word {
+  &__current {
+    font-size: 5rem;
+    // font-family: $font-kr;
+  }
+
+  &__input {
+    margin: 2rem auto;
+    padding: 1rem;
+    font-size: inherit;
+    font-family: $font-input;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+
+    &:focus {
+      box-shadow: 0 0 0.7rem $color-white;
+    }
+  }
+
+  .message {
+    height: 10rem;
+  }
+
+  .game-over {
+    color: $color-red;
+  }
+}

@@ -17,6 +17,7 @@ let interval;
 // start game
 function start() {
   isGameOver = false;
+  message.classList.remove('game-over');
   showWord(words);
   score = 0;
   scoreDisplay.innerHTML = score;
@@ -26,6 +27,7 @@ function start() {
   interval = setInterval(countdown, 1000);
 
   setupInput();
+  startBtn.innerHTML = 'Playing...';
   startBtn.setAttribute('disabled', '');
 }
 
@@ -33,7 +35,7 @@ function setupInput() {
   wordInput.value = '';
   wordInput.removeAttribute('disabled');
   wordInput.focus();
-  wordInput.setAttribute('placeholder', 'Start typing...');
+  wordInput.setAttribute('placeholder', '');
   // start matching input to currentWord
   wordInput.addEventListener('input', matchInput);
 }
@@ -81,7 +83,8 @@ function countdown() {
 // end game
 function gameOver() {
   if (isGameOver && time === 0) {
-    message.innerHTML = 'Game Over!';
+    message.innerHTML = 'Game Over! Play again?';
+    message.classList.add('game-over');
     wordInput.setAttribute('disabled', '');
     wordInput.setAttribute('placeholder', 'Play again?');
     startBtn.removeAttribute('disabled');

@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
 
     <title>Typing Game</title>
   </head>
   <body>
-    <header class="header">Typing Game</header>
+    <header class="header">
+      <h1>Typing Game</h1>
+    </header>
 
     <main class="container">
       <!-- word -->
@@ -26,12 +32,12 @@
       </section>
 
       <!-- timer and score -->
-      <section>
-        <h3>Time Left: <span class="time" id="time">0</span></h3>
-        <h3>Score: <span class="score" id="score">0</span></h3>
-      </section>
+      <section class="controls">
+        <h3 class="controls__time">Time Left: <span class="time" id="time">0</span></h3>
+        <h3 class="controls__score">Score: <span class="score" id="score">0</span></h3>
 
-      <button class="btn-start" id="startBtn">START</button>
+        <button class="btn-start" id="startBtn">START</button>
+      </section>
     </main>
 
     <script src="script.js"></script>

@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -10,17 +12,19 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  background-color: #050505;
-  color: #eee;
+  font-size: 2rem;
+  font-family: $font-default;
+  background-color: $color-black;
+  color: $color-white;
   min-height: 100vh;
   text-align: center;
 }
 
 .container {
+  // border: 1px solid;
   @include flexCenter;
   flex-direction: column;
   width: 100%;
-  max-width: 50rem;
-  margin: 0 auto;
+  max-width: 80rem;
+  margin: auto;
 }
