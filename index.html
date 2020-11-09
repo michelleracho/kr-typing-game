@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Typing Game</title>
+  </head>
+  <body>
+    <header class="header">Typing Game</header>
+
+    <main class="container">
+      <!-- word -->
+      <section class="word">
+        <h2 class="word__current" id="currentWord">Typing Game</h2>
+        <input
+          type="text"
+          class="word__input"
+          id="wordInput"
+          placeholder="Click START to start game..."
+          disabled
+        />
+        <p class="message" id="message"></p>
+      </section>
+
+      <!-- timer and score -->
+      <section>
+        <h3>Time Left: <span class="time" id="time">0</span></h3>
+        <h3>Score: <span class="score" id="score">0</span></h3>
+      </section>
+
+      <button class="btn-start" id="startBtn">START</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
