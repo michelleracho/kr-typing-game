@@ -3,9 +3,10 @@
   padding: 2rem;
 
   h1 {
-    font-size: 5rem;
+    font-size: 7rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    opacity: 0;
+    letter-spacing: 0.5rem;
+    line-height: 1;
+    color: rgba($color-white, 0.1);
   }
 }

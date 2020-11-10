@@ -1,0 +1,28 @@
+.instructions {
+  color: rgba($color-white, 0.1);
+  // text-align: left;
+  margin-top: 5rem;
+  width: 100%;
+
+  h4 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    // border: 1px solid red;
+    @include flexCenter;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    font-size: 2rem; // 1.6rem;
+    letter-spacing: 1px; // 0.5px;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+}

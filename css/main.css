@@ -3,14 +3,30 @@
 }
 
 .header h1 {
-  font-size: 5rem;
+  font-size: 7rem;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  opacity: 0;
+  letter-spacing: 0.5rem;
+  line-height: 1;
+  color: rgba(255, 255, 250, 0.1);
+}
+
+.word {
+  margin-top: 4rem;
+  margin-bottom: 7rem;
 }
 
 .word__current {
   font-size: 5rem;
+  font-family: "Jua", sans-serif;
+  height: 6rem;
+}
+
+.word__translation {
+  font-size: 1.4rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: "Jua", sans-serif;
+  opacity: 0.7;
 }
 
 .word__input {
@@ -30,7 +46,7 @@
 }
 
 .word .message {
-  height: 10rem;
+  height: 2.5rem;
 }
 
 .word .game-over {
@@ -47,9 +63,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 100%;
 }
 
@@ -119,6 +134,41 @@
   font-size: 3.5rem;
 }
 
+.instructions {
+  color: rgba(255, 255, 250, 0.1);
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.instructions h4 {
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.instructions__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.instructions__item {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.instructions__item:not(:last-child) {
+  margin-right: 5rem;
+}
+
 *,
 *::before,
 *::after {
@@ -158,7 +208,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  max-width: 80rem;
+  max-width: 100rem;
   margin: auto;
 }
 /*# sourceMappingURL=main.css.map */

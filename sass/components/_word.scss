@@ -1,7 +1,20 @@
 .word {
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+
   &__current {
     font-size: 5rem;
-    // font-family: $font-kr;
+    font-family: $font-kr;
+    height: 6rem;
+  }
+
+  &__translation {
+    // border: 1px solid red;
+    font-size: 1.4rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: $font-kr;
+    opacity: 0.7;
   }
 
   &__input {
@@ -20,7 +33,7 @@
   }
 
   .message {
-    height: 10rem;
+    height: 2.5rem;
   }
 
   .game-over {

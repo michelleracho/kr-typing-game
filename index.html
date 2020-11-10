@@ -10,17 +10,19 @@
     />
     <link rel="stylesheet" href="css/main.css" />
 
-    <title>Typing Game</title>
+    <title>KR Typing</title>
   </head>
   <body>
     <header class="header">
-      <h1>Typing Game</h1>
+      <h1>Learn vocab and practice typing in Korean!</h1>
     </header>
 
     <main class="container">
       <!-- word -->
       <section class="word">
-        <h2 class="word__current" id="currentWord">Typing Game</h2>
+        <h2 class="word__current" id="currentWord">KR Typing Game</h2>
+        <p class="word__translation" id="translation"></p>
+
         <input
           type="text"
           class="word__input"
@@ -38,8 +40,22 @@
 
         <button class="btn-start" id="startBtn">START</button>
       </section>
+
+      <!-- instructions -->
+      <section class="instructions">
+        <h4>Instructions</h4>
+        <ol class="instructions__list">
+          <li class="instructions__item">Setup your keyboard input to Korean</li>
+          <!-- <li class="instructions__item">If you need reference, click ⌨</li> -->
+          <li class="instructions__item">When you're ready, click START</li>
+          <li class="instructions__item">
+            Type the word shown, no need to type the English translation!
+          </li>
+        </ol>
+      </section>
     </main>
 
+    <script src="vocab.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

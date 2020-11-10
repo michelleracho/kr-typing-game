@@ -1,13 +1,14 @@
 const wordInput = document.querySelector('#wordInput');
 const currentWord = document.querySelector('#currentWord');
+const translation = document.querySelector('#translation');
 const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 const startBtn = document.querySelector('#startBtn');
 
-const words = ['apple', 'eagle', 'igloo', 'octopus', 'umbrella'];
-const DEFAULT_TIME = 5;
+const words = vocab;
+const DEFAULT_TIME = 30;
 
 let time = DEFAULT_TIME;
 let score;
@@ -36,14 +37,14 @@ function setupInput() {
   wordInput.removeAttribute('disabled');
   wordInput.focus();
   wordInput.setAttribute('placeholder', '');
-  // start matching input to currentWord
   wordInput.addEventListener('input', matchInput);
 }
 
 // pick and show random word
 function showWord(words) {
   const randIndex = Math.floor(Math.random() * words.length);
-  currentWord.innerHTML = words[randIndex];
+  currentWord.innerHTML = words[randIndex].kr;
+  translation.innerHTML = words[randIndex].en;
 
   time = DEFAULT_TIME + 1;
 }

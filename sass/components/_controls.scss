@@ -1,7 +1,7 @@
 .controls {
   // border: 1px solid;
   @include flexCenter;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 
   &__time,
