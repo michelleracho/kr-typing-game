@@ -14,6 +14,7 @@ let time = DEFAULT_TIME;
 let score;
 let isGameOver;
 let interval;
+let timeout;
 
 // start game
 function start() {
@@ -58,11 +59,11 @@ function matchInput() {
     score++;
     message.innerText = 'You got it!';
 
-    setTimeout(() => {
-      showWord(words);
-      wordInput.value = '';
-      message.innerText = '';
-    }, 1000);
+    // timeout = setTimeout(() => {
+    showWord(words);
+    wordInput.value = '';
+    // message.innerText = '';
+    // }, 1000);
   } else {
     message.innerText = '';
   }
