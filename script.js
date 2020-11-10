@@ -53,29 +53,21 @@ function showWord(words) {
 
 // match input to currentWord
 function matchInput() {
-  if (matchWords()) {
-    // add 1s delay before changing word
+  if (wordInput.value === currentWord.innerText) {
+    score++;
+    message.innerText = 'You got it!';
+
     setTimeout(() => {
       showWord(words);
       wordInput.value = '';
-    }, 1000);
-    score++;
-  }
-  scoreDisplay.innerText = score;
-}
-
-// match currentWord to input
-function matchWords() {
-  if (wordInput.value === currentWord.innerText) {
-    message.innerText = 'You got it!';
-    setTimeout(() => {
       message.innerText = '';
+      console.log(wordInput.value);
     }, 1000);
-    return true;
   } else {
     message.innerText = '';
-    return false;
   }
+
+  scoreDisplay.innerText = score;
 }
 
 // countdown timer
