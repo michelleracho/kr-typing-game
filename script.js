@@ -8,7 +8,7 @@ const seconds = document.querySelector('#seconds');
 const startBtn = document.querySelector('#startBtn');
 
 const words = vocab;
-const DEFAULT_TIME = 30;
+const DEFAULT_TIME = 15;
 
 let time = DEFAULT_TIME;
 let score;
@@ -52,8 +52,11 @@ function showWord(words) {
 // match input to currentWord
 function matchInput() {
   if (matchWords()) {
-    showWord(words);
-    wordInput.value = '';
+    // add 1s delay before changing word
+    setTimeout(() => {
+      showWord(words);
+      wordInput.value = '';
+    }, 1000);
     score++;
   }
   scoreDisplay.innerHTML = score;
@@ -63,6 +66,9 @@ function matchInput() {
 function matchWords() {
   if (wordInput.value === currentWord.innerHTML) {
     message.innerHTML = 'You got it!';
+    setTimeout(() => {
+      message.innerHTML = '';
+    }, 1000);
     return true;
   } else {
     message.innerHTML = '';
