@@ -17,18 +17,20 @@ let interval;
 
 // start game
 function start() {
+  currentWord.classList.remove('initial-font');
   isGameOver = false;
+  message.innerText = '';
   message.classList.remove('game-over');
   showWord(words);
   score = 0;
-  scoreDisplay.innerHTML = score;
+  scoreDisplay.innerText = score;
 
   // countdown timer
   clearInterval(interval);
   interval = setInterval(countdown, 1000);
 
   setupInput();
-  startBtn.innerHTML = 'Playing...';
+  startBtn.innerText = 'Playing...';
   startBtn.setAttribute('disabled', '');
 }
 
@@ -43,8 +45,8 @@ function setupInput() {
 // pick and show random word
 function showWord(words) {
   const randIndex = Math.floor(Math.random() * words.length);
-  currentWord.innerHTML = words[randIndex].kr;
-  translation.innerHTML = words[randIndex].en;
+  currentWord.innerText = words[randIndex].kr;
+  translation.innerText = words[randIndex].en;
 
   time = DEFAULT_TIME + 1;
 }
@@ -59,19 +61,19 @@ function matchInput() {
     }, 1000);
     score++;
   }
-  scoreDisplay.innerHTML = score;
+  scoreDisplay.innerText = score;
 }
 
 // match currentWord to input
 function matchWords() {
-  if (wordInput.value === currentWord.innerHTML) {
-    message.innerHTML = 'You got it!';
+  if (wordInput.value === currentWord.innerText) {
+    message.innerText = 'You got it!';
     setTimeout(() => {
-      message.innerHTML = '';
+      message.innerText = '';
     }, 1000);
     return true;
   } else {
-    message.innerHTML = '';
+    message.innerText = '';
     return false;
   }
 }
@@ -84,18 +86,18 @@ function countdown() {
     isGameOver = true;
     gameOver();
   }
-  timeDisplay.innerHTML = time;
+  timeDisplay.innerText = time;
 }
 
 // end game
 function gameOver() {
   if (isGameOver && time === 0) {
-    message.innerHTML = 'Game Over! Play again?';
+    message.innerText = 'Game Over! Play again?';
     message.classList.add('game-over');
     wordInput.setAttribute('disabled', '');
     wordInput.setAttribute('placeholder', 'Play again?');
     startBtn.removeAttribute('disabled');
-    startBtn.innerHTML = 'Play Again!';
+    startBtn.innerText = 'Play Again!';
   }
 }
 

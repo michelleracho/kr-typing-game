@@ -17,14 +17,14 @@
 
 .word__current {
   font-size: 5rem;
-  font-family: "Jua", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   height: 6rem;
 }
 
 .word__translation {
   font-size: 1.4rem;
   height: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   font-family: "Jua", sans-serif;
   opacity: 0.7;
 }
@@ -51,6 +51,10 @@
 
 .word .game-over {
   color: #d62828;
+}
+
+.word .initial-font {
+  font-family: "Jua", sans-serif;
 }
 
 .controls {
