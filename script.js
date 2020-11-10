@@ -27,7 +27,7 @@ function start() {
 
   // countdown timer
   clearInterval(interval);
-  interval = setInterval(countdown, 1000);
+  if (!isGameOver) interval = setInterval(countdown, 1000);
 
   setupInput();
   startBtn.innerText = 'Playing...';
@@ -46,6 +46,7 @@ function setupInput() {
 function showWord(words) {
   const randIndex = Math.floor(Math.random() * words.length);
   currentWord.innerText = words[randIndex].kr;
+  // currentWord.innerText = words[randIndex].en.toLowerCase();
   translation.innerText = words[randIndex].en;
 
   time = DEFAULT_TIME + 1;
@@ -61,7 +62,6 @@ function matchInput() {
       showWord(words);
       wordInput.value = '';
       message.innerText = '';
-      console.log(wordInput.value);
     }, 1000);
   } else {
     message.innerText = '';
@@ -74,7 +74,7 @@ function matchInput() {
 function countdown() {
   if (time > 0) {
     time--;
-  } else if (time === 0) {
+  } else if (time <= 0) {
     isGameOver = true;
     gameOver();
   }
