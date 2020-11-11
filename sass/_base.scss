@@ -18,13 +18,13 @@ body {
   color: $color-white;
   min-height: 100vh;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
-  // border: 1px solid;
-  @include flexCenter;
-  flex-direction: column;
   width: 100%;
   max-width: 100rem;
+  height: 100%;
   margin: auto;
 }

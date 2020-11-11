@@ -1,5 +1,4 @@
 .controls {
-  // border: 1px solid;
   @include flexCenter;
   justify-content: space-around;
   width: 100%;
@@ -20,17 +19,12 @@
 
   .btn-start {
     order: 1;
-    cursor: pointer;
-    width: 20rem;
-    font-family: inherit;
+    @include btnDefaults;
     font-size: 3rem;
-    outline: none;
+    width: 20rem;
     background-color: $color-white;
-    border: none;
-    border-radius: 3px;
     letter-spacing: 0.5rem;
     position: relative;
-    // overflow: hidden;
 
     &::before {
       content: 'START';

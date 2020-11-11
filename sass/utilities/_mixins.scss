@@ -3,3 +3,12 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin btnDefaults {
+  cursor: pointer;
+  font-family: inherit;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}

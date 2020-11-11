@@ -1,5 +1,4 @@
 .header {
-  // border: 1px solid red;
   padding: 2rem;
 
   h1 {
@@ -7,6 +6,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     line-height: 1;
-    color: rgba($color-white, 0.1);
+    color: $color-gray;
   }
 }

@@ -1,39 +1,67 @@
 .instructions {
-  color: rgba($color-white, 0.1);
-  // text-align: left;
+  color: $color-gray;
   margin-top: 5rem;
   width: 100%;
-  @include flexCenter;
-  flex-direction: column;
+  position: relative;
 
   h4 {
-    font-size: 2.3rem;
+    font-size: 3rem;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   &__list {
-    // border: 1px solid red;
     @include flexCenter;
-    // justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   &__item {
-    font-size: 2rem; // 1.6rem;
-    letter-spacing: 1px; // 0.5px;
-
-    &:not(:last-child) {
-      margin-right: 5rem;
-    }
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    line-height: 1;
   }
 
   .keyboard {
-    display: block;
+    width: 100%;
+    position: relative;
+    transform: translateY(100%);
+    transition: transform 0.7s ease;
 
-    img {
+    &__img {
+      display: block;
       width: 100%;
       height: auto;
     }
+
+    .btn-keyboard {
+      @include btnDefaults;
+      @include flexCenter;
+      flex-direction: column;
+      text-transform: uppercase;
+      font-size: 3rem;
+      color: $color-white;
+      padding: 0.5rem;
+      position: absolute;
+      top: -6rem;
+      right: 0;
+
+      span {
+        font-size: 1.5rem;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        span {
+          transform: scaleY(1);
+        }
+      }
+    }
   }
+}
+
+.show-keyboard {
+  transform: translateY(0) !important;
+  bottom: 0;
 }

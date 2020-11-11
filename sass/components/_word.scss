@@ -1,6 +1,5 @@
 .word {
-  margin-top: 4rem;
-  margin-bottom: 7rem;
+  margin: 4rem 0;
 
   &__current {
     font-size: 5rem;
@@ -9,12 +8,11 @@
   }
 
   &__translation {
-    // border: 1px solid red;
     font-size: 1.4rem;
     height: 2.5rem;
     margin-top: 1rem;
     font-family: $font-kr;
-    opacity: 0.7;
+    color: rgba($color-white, 0.75);
   }
 
   &__input {
@@ -29,6 +27,10 @@
 
     &:focus {
       box-shadow: 0 0 0.7rem $color-white;
+    }
+
+    &:disabled {
+      background-color: $color-gray;
     }
   }
 

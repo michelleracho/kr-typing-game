@@ -7,6 +7,22 @@ const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
 const startBtn = document.querySelector('#startBtn');
 
+/* show/hide keyboard */
+const keyboard = document.querySelector('.keyboard');
+const keyboardSpan = document.querySelector('.keyboard span');
+const keyboardBtn = document.querySelector('.btn-keyboard');
+
+keyboardBtn.addEventListener('click', () => {
+  keyboard.classList.toggle('show-keyboard');
+});
+
+keyboardBtn.addEventListener('mouseover', () => {
+  keyboard.classList.contains('show-keyboard')
+    ? (keyboardSpan.innerText = 'Hide')
+    : (keyboardSpan.innerText = 'Show');
+});
+
+/* game */
 const words = vocab;
 const DEFAULT_TIME = 15;
 
@@ -14,7 +30,7 @@ let time = DEFAULT_TIME;
 let score;
 let isGameOver;
 let interval;
-let timeout;
+// let timeout;
 
 // start game
 function start() {
@@ -59,7 +75,7 @@ function matchInput() {
     score++;
     message.innerText = 'You got it!';
 
-    // timeout = setTimeout(() => {
+    // setTimeout(() => {
     showWord(words);
     wordInput.value = '';
     // message.innerText = '';

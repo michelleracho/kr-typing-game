@@ -7,12 +7,11 @@
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   line-height: 1;
-  color: rgba(255, 255, 250, 0.1);
+  color: rgba(255, 255, 250, 0.2);
 }
 
 .word {
-  margin-top: 4rem;
-  margin-bottom: 7rem;
+  margin: 4rem 0;
 }
 
 .word__current {
@@ -26,7 +25,7 @@
   height: 2.5rem;
   margin-top: 1rem;
   font-family: "Jua", sans-serif;
-  opacity: 0.7;
+  color: rgba(255, 255, 250, 0.75);
 }
 
 .word__input {
@@ -43,6 +42,10 @@
 .word__input:focus {
   -webkit-box-shadow: 0 0 0.7rem #fffffa;
           box-shadow: 0 0 0.7rem #fffffa;
+}
+
+.word__input:disabled {
+  background-color: rgba(255, 255, 250, 0.2);
 }
 
 .word .message {
@@ -94,13 +97,14 @@
       -ms-flex-order: 1;
           order: 1;
   cursor: pointer;
-  width: 20rem;
   font-family: inherit;
-  font-size: 3rem;
+  background-color: transparent;
   outline: none;
-  background-color: #fffffa;
   border: none;
   border-radius: 3px;
+  font-size: 3rem;
+  width: 20rem;
+  background-color: #fffffa;
   letter-spacing: 0.5rem;
   position: relative;
 }
@@ -139,9 +143,19 @@
 }
 
 .instructions {
-  color: rgba(255, 255, 250, 0.1);
+  color: rgba(255, 255, 250, 0.2);
   margin-top: 5rem;
   width: 100%;
+  position: relative;
+}
+
+.instructions h4 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.instructions__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,13 +171,36 @@
           flex-direction: column;
 }
 
-.instructions h4 {
-  font-size: 2.3rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.instructions__item {
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
-.instructions__list {
+.instructions .keyboard {
+  width: 100%;
+  position: relative;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.7s ease;
+  transition: -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+.instructions .keyboard__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.instructions .keyboard .btn-keyboard {
+  cursor: pointer;
+  font-family: inherit;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,26 +210,40 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #fffffa;
+  padding: 0.5rem;
+  position: absolute;
+  top: -6rem;
+  right: 0;
 }
 
-.instructions__item {
-  font-size: 2rem;
-  letter-spacing: 1px;
+.instructions .keyboard .btn-keyboard span {
+  font-size: 1.5rem;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-.instructions__item:not(:last-child) {
-  margin-right: 5rem;
+.instructions .keyboard .btn-keyboard:hover span {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
-.instructions .keyboard {
-  display: block;
-}
-
-.instructions .keyboard img {
-  width: 100%;
-  height: auto;
+.show-keyboard {
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+  bottom: 0;
 }
 
 *,
@@ -217,24 +268,14 @@ body {
   color: #fffffa;
   min-height: 100vh;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 100%;
   max-width: 100rem;
+  height: 100%;
   margin: auto;
 }
 /*# sourceMappingURL=main.css.map */
