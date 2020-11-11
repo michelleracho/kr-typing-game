@@ -2,17 +2,18 @@
   color: $color-gray;
   margin-top: 5rem;
   width: 100%;
-  // margin-top: auto;
   @include flexCenter;
   flex-direction: column;
-  // border: 1px solid red;
   position: relative;
-  // bottom: 0;
 
   h4 {
     font-size: 3rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 2.5rem;
+    }
   }
 
   &__list {
@@ -24,11 +25,27 @@
     font-size: 2.2rem;
     letter-spacing: 0.5px;
     line-height: 1;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 1.8rem;
+      margin: auto 2rem;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      @media only screen and (max-width: $bp-sm) {
+        display: none;
+      }
+    }
   }
 
   .keyboard {
     width: 80%;
     position: relative;
+
+    @media only screen and (max-width: $bp-sm) {
+      display: none;
+    }
 
     &__img {
       display: block;
@@ -60,6 +77,10 @@
     bottom: 0;
     right: 0;
     z-index: 1;
+
+    @media only screen and (max-width: $bp-sm) {
+      display: none;
+    }
 
     span {
       font-size: 1.5rem;

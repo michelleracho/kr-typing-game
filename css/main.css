@@ -10,6 +10,18 @@
   color: rgba(255, 255, 250, 0.2);
 }
 
+@media only screen and (max-width: 750px) {
+  .header h1 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+}
+
 .word {
   margin: 4rem 0;
 }
@@ -18,6 +30,13 @@
   font-size: 5rem;
   font-family: "Noto Sans KR", sans-serif;
   height: 6rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .word__current {
+    font-size: 3rem;
+    height: 4rem;
+  }
 }
 
 .word__translation {
@@ -75,9 +94,24 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 500px) {
+  .controls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .controls__time, .controls__score {
   width: 15rem;
   letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 500px) {
+  .controls__time, .controls__score {
+    font-size: 2.5rem;
+  }
 }
 
 .controls__time {
@@ -90,6 +124,14 @@
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+@media only screen and (max-width: 500px) {
+  .controls__score {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 .controls .btn-start {
@@ -107,6 +149,15 @@
   background-color: #fffffa;
   letter-spacing: 0.5rem;
   position: relative;
+}
+
+@media only screen and (max-width: 500px) {
+  .controls .btn-start {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 2rem;
+  }
 }
 
 .controls .btn-start::before {
@@ -142,6 +193,13 @@
   font-size: 3.5rem;
 }
 
+@media only screen and (max-width: 500px) {
+  .controls .time,
+  .controls .score {
+    font-size: 3rem;
+  }
+}
+
 .instructions {
   color: rgba(255, 255, 250, 0.2);
   margin-top: 5rem;
@@ -168,6 +226,12 @@
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 500px) {
+  .instructions h4 {
+    font-size: 2.5rem;
+  }
+}
+
 .instructions__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,9 +254,28 @@
   line-height: 1;
 }
 
+@media only screen and (max-width: 500px) {
+  .instructions__item {
+    font-size: 1.8rem;
+    margin: auto 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .instructions__item:nth-child(2), .instructions__item:nth-child(3) {
+    display: none;
+  }
+}
+
 .instructions .keyboard {
   width: 80%;
   position: relative;
+}
+
+@media only screen and (max-width: 500px) {
+  .instructions .keyboard {
+    display: none;
+  }
 }
 
 .instructions .keyboard__img {
@@ -249,6 +332,12 @@
   z-index: 1;
 }
 
+@media only screen and (max-width: 500px) {
+  .instructions .btn-keyboard {
+    display: none;
+  }
+}
+
 .instructions .btn-keyboard span {
   font-size: 1.5rem;
   -webkit-transform: scaleY(0);
@@ -303,6 +392,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    display: block;
+  }
 }
 
 .container {

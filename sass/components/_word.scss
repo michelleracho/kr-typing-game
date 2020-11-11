@@ -5,6 +5,11 @@
     font-size: 5rem;
     font-family: $font-input;
     height: 6rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 3rem;
+      height: 4rem;
+    }
   }
 
   &__translation {

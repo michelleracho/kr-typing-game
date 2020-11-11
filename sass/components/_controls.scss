@@ -3,10 +3,18 @@
   justify-content: space-around;
   width: 100%;
 
+  @media only screen and (max-width: $bp-sm) {
+    flex-direction: column;
+  }
+
   &__time,
   &__score {
     width: 15rem;
     letter-spacing: 2px;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 2.5rem;
+    }
   }
 
   &__time {
@@ -15,6 +23,10 @@
 
   &__score {
     order: 2;
+
+    @media only screen and (max-width: $bp-sm) {
+      order: 1;
+    }
   }
 
   .btn-start {
@@ -25,6 +37,11 @@
     background-color: $color-white;
     letter-spacing: 0.5rem;
     position: relative;
+
+    @media only screen and (max-width: $bp-sm) {
+      order: 2;
+      margin-top: 2rem;
+    }
 
     &::before {
       content: 'START';
@@ -56,5 +73,9 @@
   .time,
   .score {
     font-size: 3.5rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 3rem;
+    }
   }
 }
