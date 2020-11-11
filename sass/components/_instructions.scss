@@ -2,7 +2,12 @@
   color: $color-gray;
   margin-top: 5rem;
   width: 100%;
+  // margin-top: auto;
+  @include flexCenter;
+  flex-direction: column;
+  // border: 1px solid red;
   position: relative;
+  // bottom: 0;
 
   h4 {
     font-size: 3rem;
@@ -22,46 +27,51 @@
   }
 
   .keyboard {
-    width: 100%;
+    width: 80%;
     position: relative;
-    transform: translateY(100%);
-    transition: transform 0.7s ease;
 
     &__img {
       display: block;
       width: 100%;
       height: auto;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: transform 0.7s ease, opacity 0.2s ease-in-out 0.2s;
     }
 
-    .btn-keyboard {
-      @include btnDefaults;
-      @include flexCenter;
-      flex-direction: column;
-      text-transform: uppercase;
-      font-size: 3rem;
-      color: $color-white;
-      padding: 0.5rem;
-      position: absolute;
-      top: -6rem;
-      right: 0;
+    .show-keyboard {
+      transform: translateY(0);
+      bottom: 0;
+      opacity: 1;
+    }
+  }
 
+  .btn-keyboard {
+    @include btnDefaults;
+    @include flexCenter;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: $color-white;
+    margin-bottom: -1rem;
+    margin-right: 5%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    span {
+      font-size: 1.5rem;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
       span {
-        font-size: 1.5rem;
-        transform: scaleY(0);
-        transform-origin: bottom;
-        transition: transform 0.2s ease;
-      }
-
-      &:hover {
-        span {
-          transform: scaleY(1);
-        }
+        transform: scaleY(1);
       }
     }
   }
-}
-
-.show-keyboard {
-  transform: translateY(0) !important;
-  bottom: 0;
 }

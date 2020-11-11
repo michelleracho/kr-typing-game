@@ -20,6 +20,8 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
+  @include flexCenter;
+  flex-direction: column;
 }
 
 .container {

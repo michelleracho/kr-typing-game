@@ -9,15 +9,16 @@ const startBtn = document.querySelector('#startBtn');
 
 /* show/hide keyboard */
 const keyboard = document.querySelector('.keyboard');
-const keyboardSpan = document.querySelector('.keyboard span');
+const keyboardImg = document.querySelector('.keyboard img');
 const keyboardBtn = document.querySelector('.btn-keyboard');
+const keyboardSpan = document.querySelector('.btn-keyboard span');
 
 keyboardBtn.addEventListener('click', () => {
-  keyboard.classList.toggle('show-keyboard');
+  keyboardImg.classList.toggle('show-keyboard');
 });
 
 keyboardBtn.addEventListener('mouseover', () => {
-  keyboard.classList.contains('show-keyboard')
+  keyboardImg.classList.contains('show-keyboard')
     ? (keyboardSpan.innerText = 'Hide')
     : (keyboardSpan.innerText = 'Show');
 });

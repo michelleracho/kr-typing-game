@@ -146,6 +146,19 @@
   color: rgba(255, 255, 250, 0.2);
   margin-top: 5rem;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
 }
 
@@ -178,23 +191,31 @@
 }
 
 .instructions .keyboard {
-  width: 100%;
+  width: 80%;
   position: relative;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: -webkit-transform 0.7s ease;
-  transition: -webkit-transform 0.7s ease;
-  transition: transform 0.7s ease;
-  transition: transform 0.7s ease, -webkit-transform 0.7s ease;
 }
 
 .instructions .keyboard__img {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: opacity 0.2s ease-in-out 0.2s, -webkit-transform 0.7s ease;
+  transition: opacity 0.2s ease-in-out 0.2s, -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease, opacity 0.2s ease-in-out 0.2s;
+  transition: transform 0.7s ease, opacity 0.2s ease-in-out 0.2s, -webkit-transform 0.7s ease;
 }
 
-.instructions .keyboard .btn-keyboard {
+.instructions .keyboard .show-keyboard {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  bottom: 0;
+  opacity: 1;
+}
+
+.instructions .btn-keyboard {
   cursor: pointer;
   font-family: inherit;
   background-color: transparent;
@@ -210,6 +231,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -217,13 +241,15 @@
   text-transform: uppercase;
   font-size: 3rem;
   color: #fffffa;
-  padding: 0.5rem;
+  margin-bottom: -1rem;
+  margin-right: 5%;
   position: absolute;
-  top: -6rem;
+  bottom: 0;
   right: 0;
+  z-index: 1;
 }
 
-.instructions .keyboard .btn-keyboard span {
+.instructions .btn-keyboard span {
   font-size: 1.5rem;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
@@ -235,15 +261,9 @@
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-.instructions .keyboard .btn-keyboard:hover span {
+.instructions .btn-keyboard:hover span {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
-}
-
-.show-keyboard {
-  -webkit-transform: translateY(0) !important;
-          transform: translateY(0) !important;
-  bottom: 0;
 }
 
 *,
@@ -270,6 +290,19 @@ body {
   text-align: center;
   overflow: hidden;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container {
